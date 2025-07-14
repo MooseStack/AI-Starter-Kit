@@ -79,7 +79,7 @@ handle_options "$@"
 if [ "$server_mode" = true ]; then
   set_default_env_vars_for_server
   convert_llama_env_vars
-  llama-server --port 8000 -m $MODEL_PATH  $LLAMA_ARGS 
+  llama-server --port 8080 -m $MODEL_PATH  $LLAMA_ARGS 
 else
   set_default_env_vars
   convert_llama_env_vars

@@ -1,8 +1,11 @@
-FROM docker.n8n.io/n8nio/n8n
+FROM docker.io/n8nio/n8n:1.102.3
+
 COPY _data /home/node/.n8n
+
 USER root
-RUN chmod -Rf 775 /home/node/.n8n/
-RUN chown -Rf node:node /home/node/.n8n
+
+RUN chmod -Rf 775 /home/node/.n8n/ && \
+    chown -Rf node:node /home/node/.n8n
+
 USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
-#ENTRYPOINT ["/bin/sleep", "infinty"]

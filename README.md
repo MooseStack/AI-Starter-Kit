@@ -1,11 +1,29 @@
 # LearningBuddy
 
+# Setup
 
-## Bring up n8n and granite model
+
+## Using podman
+
+### 1. Create shared network
+`podman network create shared-network`
+
+### 2. granite
 ```
-podman network create shared-network
+podman build -t granite:latest ./granite/
 
-podman run -it -p 5678:5678 --name n8n --network shared-network docker.n8n.io/n8nio/n8n
+podman run -dit -p 8080:8080 --name granite --network shared-network localhost/granite:latest
+```
 
-podman run -it -p 8080:8080 --name granite --network shared-network docker.io/redhat/granite-3-2b-instruct -s 
+### 3. n8n
+```
+podman build -t n8n:latest ./n8n/
+
+podman run -dit -p 5678:5678 --name n8n --network shared-network localhost/n8n:latest
+```
+
+- Default credentials:
+```
+user: test@test.com
+password: ThisisaTEST1
 ```
