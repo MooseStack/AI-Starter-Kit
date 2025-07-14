@@ -1,0 +1,6 @@
+FROM docker.n8n.io/n8nio/n8n
+
+mkdir /home/node/.n8n
+
+ADD _data/ /home/node/.n8n
+
