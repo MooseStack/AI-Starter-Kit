@@ -24,6 +24,20 @@ podman run -dit -p 5678:5678 --name n8n --network shared-network localhost/n8n:l
 
 - Default credentials:
 ```
-user: test@test.com
-password: ThisisaTEST1
+User: test@test.com
+Password: ThisisaTEST1
+```
+
+### 4. open-webui
+
+```
+podman build -t open-webui:latest ./open-webui 
+
+podman run -dit -p 3000:8080 --name open-webui --network shared-network localhost/open-webui:latest
+```
+
+- Default credentials
+```
+User: test@test.com
+Password: test
 ```

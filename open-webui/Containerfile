@@ -1,0 +1,13 @@
+FROM ghcr.io/open-webui/open-webui:git-2470da8
+
+WORKDIR /app/backend
+
+## data taken from running pod - "podman cp open-webui:/app/backend/data open-webui/_data"
+## I removed the cache folder since it was 2GB+
+COPY _data /app/backend/data
+USER root
+
+RUN chmod -Rf 775 /app/backend && \
+    chown -Rf root:root /app/backend
+
+ENTRYPOINT ["./start.sh"]
