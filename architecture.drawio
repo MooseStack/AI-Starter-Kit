@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e">
+    <diagram id="s1Q2CAH3k--xPuAeOJgd" name="Page-1">
+        <mxGraphModel dx="592" dy="362" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" background="light-dark(#FFFFFF,transparent)" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="12" value="&lt;span&gt;&lt;font style=&quot;&quot;&gt;postgres (PGVector Enabled)&lt;/font&gt;&lt;/span&gt;" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Azure_Database_for_PostgreSQL_servers.svg;labelBackgroundColor=light-dark(#FFFFFF,#000000);fontColor=light-dark(#000000,#FFFFFF);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="287.1" y="268" width="55" height="72.37" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;span&gt;&lt;font style=&quot;&quot;&gt;Embeddings Model - Granite&lt;/font&gt;&lt;/span&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/ai_machine_learning/Cognitive_Services.svg;labelBackgroundColor=light-dark(#FFFFFF,#000000);fontColor=light-dark(#000000,#FFFFFF);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="111" width="68" height="48" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;span&gt;&lt;font style=&quot;&quot;&gt;GenAI Model - Granite&lt;/font&gt;&lt;/span&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/ai_machine_learning/Cognitive_Services.svg;labelBackgroundColor=light-dark(#FFFFFF,#000000);fontColor=light-dark(#000000,#FFFFFF);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="220" width="68" height="48" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="n8n" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=light-dark(#000000,#66FFFF);fillColor=#00BEF2;shape=mxgraph.azure.automation;pointerEvents=1;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="160" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;span&gt;&lt;font style=&quot;&quot;&gt;Open-WebUI&lt;/font&gt;&lt;/span&gt;" style="sketch=0;html=1;aspect=fixed;strokeColor=light-dark(#000000,#66FFFF);shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.enhance_ui_2;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="274.6" y="38.2" width="80" height="72.8" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=0.797;exitY=0.423;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.062;entryY=0.658;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" edge="1" parent="1" source="15" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="193.38332701612" as="sourcePoint"/>
+                        <mxPoint x="470" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryX=0.788;entryY=0.198;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.078;exitY=0.547;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" edge="1" parent="1" source="16" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="92.12176888654903" as="sourcePoint"/>
+                        <mxPoint x="177.90697674418607" y="166.20000000000005" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=none;html=1;entryX=0.044;entryY=0.363;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.826;exitY=0.578;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" edge="1" parent="1" source="16" target="13">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="69.90363845270008" as="sourcePoint"/>
+                        <mxPoint x="500" y="97.52499999999998" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=none;html=1;entryX=-0.063;entryY=0.148;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.817;exitY=0.693;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" edge="1" parent="1" source="15" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="178.99169278179443" y="240" as="sourcePoint"/>
+                        <mxPoint x="321.20743034055727" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.021;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.41;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=light-dark(#000000,#FFFFFF);labelBackgroundColor=light-dark(#FFFFFF,#000000);labelBorderColor=none;strokeColor=light-dark(#000000,#66FFFF);dashed=1;" edge="1" parent="1" target="14">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="209.99999999999994" as="sourcePoint"/>
+                        <mxPoint x="481.02" y="291.824" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="310" y="230"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

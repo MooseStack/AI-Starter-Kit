@@ -1,5 +1,9 @@
 # LearningBuddy
 
+# Architecture
+![Architecture](architecture.svg)
+
+
 # Setup
 
 ## podman - using script

@@ -1,12 +1,16 @@
 FROM docker.io/n8nio/n8n:1.102.3
 
+ENV EXECUTIONS_TIMEOUT=3600
+
 ## data taken from running pod - "podman cp n8n:/home/node/.n8n n8n/_data"
 COPY _data /home/node/.n8n
 
 USER root
 
-RUN chmod -Rf 775 /home/node/.n8n/ && \
-    chown -Rf node:node /home/node/.n8n
+COPY pdf-for-rag /pdf-for-rag
+
+RUN chmod -Rf 775 /home/node/.n8n/ /pdf-for-rag && \
+    chown -Rf node:node /home/node/.n8n /pdf-for-rag
 
 USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
