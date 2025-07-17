@@ -4,4 +4,7 @@ ENV POSTGRES_USER=postgres \
     POSTGRES_PASSWORD=postgres \
     POSTGRES_DB=postgres
 
+
+# TODO - load data into postgres, extract data, and copy data to /var/lib/postgresql/data
+
 EXPOSE 5432

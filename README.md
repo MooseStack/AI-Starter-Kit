@@ -52,3 +52,23 @@ podman run -dit -p 3000:8080 --name open-webui --network shared-network localhos
 User: test@test.com
 Password: test
 ```
+
+### 5. postgres / pgvector (vector enabled postgres database)
+```
+podman build -t postgres:latest ./postgres/
+
+podman run -dit -p 5432:5432 --name postgres --network shared-network localhost/postgres:latest
+```
+
+- `psql -h localhost -p 5432 -U postgres -d postgres` - password is "postgres" when prompted
+
+
+
+### 6. granite embedding model (used to create vectors to postgres)
+```
+podman build -t granite-embedding-vllm:latest ./granite-embedding-vllm/
+
+podman run -dit -p 8888:8888 --name granite-embedding-vllm --network shared-network localhost/granite-embedding-vllm:latest
+```
+
+- http://localhost:8888
