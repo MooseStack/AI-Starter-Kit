@@ -4,6 +4,8 @@ set -e
 # Container definitions: name|hostport:containerport
 CONTAINERS=(
   "granite|8080:8080"
+  "granite-embedding-vllm|8888:8888"
+  "postgres|5432:5432"
   "n8n|5678:5678"
   "open-webui|3000:8080"
 )
@@ -55,13 +57,44 @@ check_status() {
   echo
   echo '##### CHECKING STATUS OF CONTAINERS #####'
   sleep 10
-  echo "Containers started successfully:"
   for ENTRY in "${CONTAINERS[@]}"; do
     IFS='|' read -r NAME PORT <<< "$ENTRY"
     if podman ps --format "{{.Names}}" | grep -w "$NAME" &>/dev/null; then
-      echo "- $NAME is running"
+      echo -n "- $NAME is running"
+      case "$NAME" in
+        granite)
+          echo " | URL: http://localhost:8080"
+          echo
+          ;;
+        granite-embedding-vllm)
+          echo " | URL: http://localhost:8888"
+          echo
+          ;;
+        n8n)
+          echo " | URL: http://localhost:5678"
+          echo "    Credentials: "
+          echo "    User: test@test.com  Password: ThisisaTEST1"
+          echo
+          ;;
+        open-webui)
+          echo " | URL: http://localhost:3000"
+          echo "    Credentials: "
+          echo "    User: test@test.com  Password: test"
+          echo
+          ;;
+        postgres)
+          echo " | psql: psql -h localhost -p 5432 -U postgres -d postgres"
+          echo "    Password: postgres"
+          echo
+          ;;
+        *)
+          echo
+          ;;
+      esac
     else
-      echo "- $NAME failed to start"
+      echo "- $NAME is NOT running. Check logs for details:"
+      echo "      podman logs $NAME"
+      echo
     fi
   done
 }
