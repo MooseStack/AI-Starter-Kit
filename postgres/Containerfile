@@ -5,6 +5,8 @@ ENV POSTGRES_USER=postgres \
     POSTGRES_DB=postgres
 
 
-# TODO - load data into postgres, extract data, and copy data to /var/lib/postgresql/data
+# Got data from: podman cp postgres:/var/lib/postgresql/data postgres/_data
+COPY _data /var/lib/postgresql/data
 
 EXPOSE 5432
+
