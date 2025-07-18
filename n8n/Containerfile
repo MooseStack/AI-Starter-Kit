@@ -1,6 +1,7 @@
 FROM docker.io/n8nio/n8n:1.102.3
 
-ENV EXECUTIONS_TIMEOUT=3600
+ENV EXECUTIONS_TIMEOUT=3600 \
+    N8N_RUNNERS_TASK_TIMEOUT=3600
 
 ## data taken from running pod - "podman cp n8n:/home/node/.n8n n8n/_data"
 COPY _data /home/node/.n8n
