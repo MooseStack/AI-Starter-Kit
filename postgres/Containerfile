@@ -7,6 +7,7 @@ ENV POSTGRES_USER=postgres \
 
 # Got data from: podman cp postgres:/var/lib/postgresql/data postgres/_data
 COPY _data /var/lib/postgresql/data
+RUN chmod -Rf 770 /var/lib/postgresql/data
 
 EXPOSE 5432
 
