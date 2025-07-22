@@ -6,6 +6,15 @@
 
 # Setup
 
+# Resource
+
+- 30GB of disk space
+- 8 vCPUs
+- 16GB Memory
+- 64 bit architecture (amd/intel 64). 
+  - ARM architecture (Mac) is not supported atm
+
+
 ## podman - using script
 `./podman-build-run.sh` - this script is interactive and will:
 - ask for confirmation before stopping running containers and deleting its image. In 1 ask (y/n).
