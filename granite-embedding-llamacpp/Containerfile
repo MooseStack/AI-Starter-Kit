@@ -1,0 +1,29 @@
+## Stage 1: Modelcar to download the model
+FROM registry.access.redhat.com/ubi9/python-312-minimal:latest as modelcar
+
+USER root
+WORKDIR /models
+
+# Model repo name from Hugging Face are downloaded to /models
+# https://huggingface.co/models
+ENV HUGGINGFACE_MODEL_REPO=ibm-granite/granite-embedding-125m-english
+RUN pip install huggingface-hub
+COPY download_model.py .
+RUN python download_model.py 
+
+
+
+## Stage 2: Llama.cpp
+FROM ghcr.io/ggml-org/llama.cpp:full-b5957
+
+WORKDIR /app
+
+# Copy the model files from the modelcar into the vLLM container
+COPY --from=modelcar /models /models
+
+# Copy the entrypoint script into the container
+COPY --chmod=755 entrypoint.sh /entrypoint.sh
+
+EXPOSE 8888
+
+ENTRYPOINT [ "/entrypoint.sh" ]

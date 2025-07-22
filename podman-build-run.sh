@@ -3,8 +3,8 @@ set -e
 
 # Container definitions: name|hostport:containerport
 CONTAINERS=(
-  "granite|8080:8080"
-  "granite-embedding-vllm|8888:8888"
+  "granite-instruct-llamacpp|8080:8080"
+  "granite-embedding-llamacpp|8888:8888"
   "postgres|5432:5432"
   "n8n|5678:5678"
   "open-webui|3000:8080"

@@ -19,9 +19,9 @@
 
 ### 2. granite
 ```
-podman build -t granite:latest ./granite/
+podman build -t granite-instruct-llamacpp:latest ./granite/
 
-podman run -dit -p 8080:8080 --name granite --network shared-network localhost/granite:latest
+podman run -dit -p 8080:8080 --name granite-instruct-llamacpp --network shared-network localhost/granite-instruct-llamacpp:latest
 ```
 
 - http://localhost:8080
@@ -70,9 +70,9 @@ podman run -dit -p 5432:5432 --name postgres --network shared-network localhost/
 
 ### 6. granite embedding model (used to create vectors to postgres)
 ```
-podman build -t granite-embedding-vllm:latest ./granite-embedding-vllm/
+podman build -t granite-embedding-llamacpp:latest ./granite-embedding-llamacpp/
 
-podman run -dit -p 8888:8888 --name granite-embedding-vllm --network shared-network localhost/granite-embedding-vllm:latest
+podman run -dit -p 8888:8888 --name granite-embedding-llamacpp --network shared-network localhost/granite-embedding-llamacpp:latest
 ```
 
 - http://localhost:8888
