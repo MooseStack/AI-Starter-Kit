@@ -17,7 +17,7 @@
 ### 1. Create shared network
 `podman network create shared-network`
 
-### 2. granite
+### 2. granite instruct GenAI model
 ```
 podman build -t granite-instruct-llamacpp:latest ./granite/
 
@@ -26,7 +26,7 @@ podman run -dit -p 8080:8080 --name granite-instruct-llamacpp --network shared-n
 
 - http://localhost:8080
 
-### 3. n8n
+### 3. n8n - Low/No code automation with AI Agents
 ```
 podman build -t n8n:latest ./n8n/
 
@@ -41,7 +41,7 @@ User: test@test.com
 Password: ThisisaTEST1
 ```
 
-### 4. open-webui
+### 4. open-webui - ChatGPT UI alternative
 
 ```
 podman build -t open-webui:latest ./open-webui 
@@ -57,7 +57,7 @@ User: test@test.com
 Password: test
 ```
 
-### 5. postgres / pgvector (vector enabled postgres database)
+### 5. postgres / pgvector - vector enabled postgres database
 ```
 podman build -t postgres:latest ./postgres/
 
@@ -68,7 +68,7 @@ podman run -dit -p 5432:5432 --name postgres --network shared-network localhost/
 
 
 
-### 6. granite embedding model (used to create vectors to postgres)
+### 6. granite embedding model - used to create vectors that save to postgres
 ```
 podman build -t granite-embedding-llamacpp:latest ./granite-embedding-llamacpp/
 
