@@ -1,24 +1,27 @@
-## This script tests the vLLM embedding endpoint for the Granite model.
+## This script tests the embedding endpoint for the Granite model.
 ## Execute like: python3 granite-embedding-llamacpp/test_embedding.py
+
+## Response should return a bunch of numbers representing the embedding vector for the input text.
 
 import requests
 import json
+import os
 
-# Replace with your vLLM container host and port
-VLLM_EMBEDDING_ENDPOINT = "http://localhost:8888/v1/embeddings"
+EMBEDDING_ENDPOINT = "http://localhost:8888/v1/embeddings"
+MODEL_NAME = os.environ.get("GRANITE_EMBEDDING_MODEL", "ibm-granite/granite-embedding-125m-english")
 
-def get_embedding(text):
+def get_embedding(text, model_name=MODEL_NAME):
     headers = {
         "Content-Type": "application/json"
     }
 
     payload = {
         "input": text,
-        "model": "ibm-granite/granite-embedding-125m-english"
+        "model": model_name
     }
 
     try:
-        response = requests.post(VLLM_EMBEDDING_ENDPOINT, headers=headers, data=json.dumps(payload))
+        response = requests.post(EMBEDDING_ENDPOINT, headers=headers, data=json.dumps(payload))
         response.raise_for_status()
         data = response.json()
         embedding = data['data'][0]['embedding']
