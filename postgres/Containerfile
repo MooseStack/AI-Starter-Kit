@@ -5,9 +5,14 @@ ENV POSTGRES_USER=postgres \
     POSTGRES_DB=postgres
 
 
-# Got data from: podman cp postgres:/var/lib/postgresql/data postgres/_data
-COPY _data /var/lib/postgresql/data
-RUN chmod -Rf 770 /var/lib/postgresql/data
+## To persist data - run manually: podman cp postgres:/var/lib/postgresql/data postgres/_data
+# and uncomment these two:
+#COPY _data /var/lib/postgresql/data
+#RUN chmod -Rf 770 /var/lib/postgresql/data
+
+# Copy the SQL files to the container
+COPY ./initial-setup.sql /docker-entrypoint-initdb.d/
+
 
 EXPOSE 5432
 
