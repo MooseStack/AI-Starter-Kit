@@ -35,7 +35,7 @@ The AI Starter Kit is designed to showcase popular AI projects working together 
 
 ### 2. granite instruct GenAI model
 ```
-podman build -t granite-instruct-llamacpp:latest ./granite/
+podman build -t granite-instruct-llamacpp:latest ./granite-instruct-llamacpp/
 
 podman run -dit -p 8080:8080 --name granite-instruct-llamacpp --network shared-network localhost/granite-instruct-llamacpp:latest
 ```
