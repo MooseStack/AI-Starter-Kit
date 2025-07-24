@@ -62,11 +62,11 @@ check_status() {
     if podman ps --format "{{.Names}}" | grep -w "$NAME" &>/dev/null; then
       echo -n "- $NAME is running"
       case "$NAME" in
-        granite)
+        granite-instruct-llamacpp)
           echo " | URL: http://localhost:8080"
           echo
           ;;
-        granite-embedding-vllm)
+        granite-embedding-llamacpp)
           echo " | URL: http://localhost:8888"
           echo
           ;;
