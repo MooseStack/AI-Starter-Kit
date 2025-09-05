@@ -21,7 +21,7 @@ def get_embedding(text, model_name=MODEL_NAME):
     }
 
     try:
-        response = requests.post(EMBEDDING_ENDPOINT, headers=headers, data=json.dumps(payload))
+        response = requests.post(EMBEDDING_ENDPOINT, headers=headers, data=json.dumps(payload), verify=False)
         response.raise_for_status()
         data = response.json()
         embedding = data['data'][0]['embedding']

@@ -22,7 +22,7 @@ def stream_genai_response(prompt, model_name=MODEL_NAME):
         "max_tokens": 128,
         "stream": True
     }
-    with requests.post(CHAT_ENDPOINT, headers=headers, data=json.dumps(payload), stream=True) as response:
+    with requests.post(CHAT_ENDPOINT, headers=headers, data=json.dumps(payload), stream=True, verify=False) as response:
         response.raise_for_status()
         print("GenAI streaming response:")
         for line in response.iter_lines():
