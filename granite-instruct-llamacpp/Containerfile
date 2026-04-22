@@ -14,7 +14,7 @@ RUN python download_model.py
 
 
 ## Stage 2: Llama.cpp
-FROM ghcr.io/ggml-org/llama.cpp:full-b5957
+FROM ghcr.io/ggml-org/llama.cpp:full-b8882
 
 WORKDIR /app
 
